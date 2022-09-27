@@ -5,18 +5,19 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Cinema_MVVM_PROJECT_WPF.Views.UserControls"
              mc:Ignorable="d" 
-             Height="312" Width="200">
+             Height="350" Width="250">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="5*"></RowDefinition>
-            <RowDefinition></RowDefinition>
+            <RowDefinition Height="6*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <Grid>
+
+        <Grid >
             <Canvas>
                 <Label Content="{Binding Movie.Rating}" Foreground="White" FontSize="25" FontWeight="DemiBold"
-                       Panel.ZIndex="10" Width="55" Height="45" HorizontalContentAlignment="Center"
-                       Background="Orange" Canvas.Left="70" Canvas.Top="-23"
+                       Panel.ZIndex="10" Width="55" Height="45" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                       Background="Orange" Canvas.Left="100" Canvas.Top="-23"
                        Name="rating_label">
                     <Label.Resources>
                         <Style TargetType="{x:Type Border}">
@@ -26,19 +27,22 @@
                         </Style>
                     </Label.Resources>
                 </Label>
-                <Image Source="{Binding Movie.ImagePath}" Name="image" Width="200" Height="259"  Stretch="Fill">
-                    
+                <Image Source="{Binding Movie.ImagePath}" Name="image" Width="250" Height="300"  Stretch="Fill">
+
                 </Image>
             </Canvas>
         </Grid>
 
-        <Grid Grid.Row="1">
-            <StackPanel Background="{StaticResource mainColor}">
-                <Label Name="title_label" Foreground="{StaticResource thirdColor}" 
-                       FontSize="14" FontWeight="ExtraBold" Padding="3,10,0,0"
-                       Content="{Binding Movie.Title}"></Label>
-                <Label Content="{Binding Movie.Description}" Name="genre_label" Foreground="Gray"></Label>
-            </StackPanel>
-        </Grid>
+        <Border Grid.Row="1" BorderThickness="1,3,1,1" BorderBrush="{StaticResource thirdColor}">
+
+            <Grid  Background="White">
+                <StackPanel Background="{StaticResource mainColor}">
+                    <Label Name="title_label" Foreground="{StaticResource thirdColor}" 
+                       FontSize="14" FontWeight="ExtraBold" Padding="5,5,0,0"
+                       Content="{Binding Movie.Name, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></Label>
+                    <Label Content="{Binding Movie.Genre, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Name="genre_label" Foreground="Gray"></Label>
+                </StackPanel>
+            </Grid>
+        </Border>
     </Grid>
 </UserControl>

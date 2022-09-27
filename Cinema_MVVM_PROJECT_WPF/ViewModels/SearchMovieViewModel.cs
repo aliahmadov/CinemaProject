@@ -44,11 +44,11 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
                             Movie = movies[i]
                         };
                         var uc = new SingleMovieUC();
-                        uc.rating_label.Content = "7";
                         uc.DataContext = viewModel;
 
-                        uc.Width = 200;
-                        uc.Height = 312;
+                        uc.Width = 250;
+                        uc.Height = 350;
+                        uc.Margin = new System.Windows.Thickness(10,30,10,10);
                         WrapPanel.Children.Add(uc);
                     }
                 }
