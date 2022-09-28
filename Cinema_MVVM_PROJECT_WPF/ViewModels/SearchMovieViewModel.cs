@@ -1,4 +1,5 @@
 ﻿using Cinema_MVVM_PROJECT_WPF.Commands;
+using Cinema_MVVM_PROJECT_WPF.Models;
 using Cinema_MVVM_PROJECT_WPF.Services;
 using Cinema_MVVM_PROJECT_WPF.Views.UserControls;
 using System;
@@ -6,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
@@ -18,7 +20,23 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
         public TextBox TextBox { get; set; }
         public RelayCommand SearchMovieCommand { get; set; }
         public RelayCommand BackCommand { get; set; }
+        public List<Movie> Movies { get; set; }
 
+        private void RegulateUCBackgroundColor(double rating, ref Label label)
+        {
+            if (rating >= 7)
+            {
+                label.Background = Brushes.Green;
+            }
+            else if(rating>=4 && rating < 7)
+            {
+                label.Background = Brushes.Orange;
+            }
+            else
+            {
+                label.Background = Brushes.Red;
+            }
+        }
         public SearchMovieViewModel()
         {
             BackPage = App.MyGrid.Children[0];
@@ -30,27 +48,33 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
 
             SearchMovieCommand = new RelayCommand(c =>
             {
-                var movies = MovieService.GetMovies(TextBox.Text);
-
-                if (movies != null)
+                Movies = new List<Movie>();
+                Movies = MovieService.GetMovies(TextBox.Text);
+                if (WrapPanel.Children.Count != 0)
                 {
-
-                    for (int i = 0; i < 5; i++)
+                    WrapPanel.Children.Clear();
+                }
+                if (Movies != null)
+                {
+                    for (int i = 0; i < Movies.Count; i++)
                     {
-                        
+
                         var viewModel = new SingleMovieUCViewModel()
                         {
-                            Movie = movies[i]
+                            Movie = Movies[i]
                         };
                         var uc = new SingleMovieUC();
                         viewModel.ShowMoviesWrapPanel = ShowMoviesWrapPanel;
                         uc.DataContext = viewModel;
                         uc.Width = 250;
                         uc.Height = 350;
-                        uc.Margin = new System.Windows.Thickness(10,40,10,10);
+                        uc.Margin = new System.Windows.Thickness(10, 40, 10, 10);
+                        RegulateUCBackgroundColor(Convert.ToDouble(Movies[i].Rating),ref uc.rating_label);
+
                         WrapPanel.Children.Add(uc);
                     }
                 }
+
             });
         }
     }

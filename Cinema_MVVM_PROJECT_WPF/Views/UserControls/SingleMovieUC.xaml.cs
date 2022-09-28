@@ -24,5 +24,10 @@ namespace Cinema_MVVM_PROJECT_WPF.Views.UserControls
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

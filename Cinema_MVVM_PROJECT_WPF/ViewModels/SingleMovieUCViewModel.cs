@@ -3,6 +3,7 @@ using Cinema_MVVM_PROJECT_WPF.Models;
 using Cinema_MVVM_PROJECT_WPF.Views.UserControls;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,22 +28,22 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
 
         public SingleMovieUCViewModel()
         {
+            
             AddMovieCommand = new RelayCommand(c =>
             {
                 var singleMovieForShowUC = new SingleMovieForShowUC();
                 var viewModel = new SingleMovieForShowViewModel();
                 singleMovieForShowUC.DataContext = viewModel;
 
+                viewModel.ShowMoviesWrapPanel = ShowMoviesWrapPanel;
                 viewModel.Movie = Movie;
-
+              
                 singleMovieForShowUC.Height = 350;
                 singleMovieForShowUC.Width = 250;
                 singleMovieForShowUC.Margin = new System.Windows.Thickness(10,40,10,10);
                 ShowMoviesWrapPanel.Children.Add(singleMovieForShowUC);
 
                 MessageBox.Show($"{Movie.Name} added successfully");
-
-
             });
         }
 

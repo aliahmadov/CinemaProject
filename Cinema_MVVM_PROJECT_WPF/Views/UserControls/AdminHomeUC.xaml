@@ -16,6 +16,7 @@
             <Label Margin="5" HorizontalContentAlignment="Center" BorderThickness="1" BorderBrush="{StaticResource secondColor}" FontWeight="Bold" Foreground="{StaticResource secondColor}" FontSize="40">Home Menu</Label>
             <Button Command="{Binding SearchMoviesCommand}" Background="{StaticResource secondColor}" FontWeight="Bold" FontSize="30" Margin="5,10,5,10" Foreground="{StaticResource thirdColor}">Search Movie</Button>
             <Button Command="{Binding ShowMoviesCommand}" Background="{StaticResource secondColor}" FontWeight="Bold" FontSize="30" Margin="5,10,5,10" Foreground="{StaticResource thirdColor}">Show Movies</Button>
+            <Button Command="{Binding OrganizeMoviesCommand}" Background="{StaticResource secondColor}" FontWeight="Bold" FontSize="30" Margin="5,10,5,10" Foreground="{StaticResource thirdColor}">Organize Movie</Button>
             <Button Command="{Binding PurchaseHistoryCommand}" Background="{StaticResource secondColor}" FontWeight="Bold" FontSize="30" Margin="5,10,5,10" Foreground="{StaticResource thirdColor}">Purchase History</Button>
         </StackPanel>
     </StackPanel>

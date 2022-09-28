@@ -47,6 +47,8 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
             {
                 var viewModel = new ShowMoviesViewModel();
                 ShowView.DataContext = viewModel;
+                viewModel.TextBox = ShowView.movieTxtb;
+                viewModel.WrapPanel = ShowView.moviesPanel;
                 App.MyGrid.Children.RemoveAt(0);
                 App.MyGrid.Children.Add(ShowView);
             });

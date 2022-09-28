@@ -25,7 +25,6 @@ namespace Cinema_MVVM_PROJECT_WPF.Services
 
             try
             {
-
                 for (int i = 0; i < 5; i++)
                 {
 
