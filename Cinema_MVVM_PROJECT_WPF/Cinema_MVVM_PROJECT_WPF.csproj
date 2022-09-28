@@ -64,6 +64,8 @@
     <Compile Include="ViewModels\AdminSignViewModel.cs" />
     <Compile Include="ViewModels\CinemaHomeUCViewModel.cs" />
     <Compile Include="ViewModels\SearchMovieViewModel.cs" />
+    <Compile Include="ViewModels\ShowMoviesViewModel.cs" />
+    <Compile Include="ViewModels\SingleMovieForShowViewModel.cs" />
     <Compile Include="ViewModels\SingleMovieUCViewModel.cs" />
     <Compile Include="Views\UserControls\AdminHomeUC.xaml.cs">
       <DependentUpon>AdminHomeUC.xaml</DependentUpon>
@@ -76,6 +78,12 @@
     </Compile>
     <Compile Include="Views\UserControls\SearchMovieUC.xaml.cs">
       <DependentUpon>SearchMovieUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\ShowMoviesUC.xaml.cs">
+      <DependentUpon>ShowMoviesUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\SingleMovieForShowUC.xaml.cs">
+      <DependentUpon>SingleMovieForShowUC.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\UserControls\SingleMovieUC.xaml.cs">
       <DependentUpon>SingleMovieUC.xaml</DependentUpon>
@@ -112,6 +120,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\UserControls\SearchMovieUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControls\ShowMoviesUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControls\SingleMovieForShowUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -155,6 +171,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\titanic.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\minus.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

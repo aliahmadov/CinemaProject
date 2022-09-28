@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\eliah\source\repos\Cinema_MVVM_PROJECT_WPF\Cinema_MVVM_PROJECT_WPF\App.xaml
-7-791652191
+9387646929
 
-21-2146176905
+25-602577237
 141464891474
-Dictionary.xaml;Views\MainWindow.xaml;Views\UserControls\AdminHomeUC.xaml;Views\UserControls\AdminSignUpUC.xaml;Views\UserControls\CinemaHomeUC.xaml;Views\UserControls\SearchMovieUC.xaml;Views\UserControls\SingleMovieUC.xaml;
+Dictionary.xaml;Views\MainWindow.xaml;Views\UserControls\AdminHomeUC.xaml;Views\UserControls\AdminSignUpUC.xaml;Views\UserControls\CinemaHomeUC.xaml;Views\UserControls\SearchMovieUC.xaml;Views\UserControls\ShowMoviesUC.xaml;Views\UserControls\SingleMovieForShowUC.xaml;Views\UserControls\SingleMovieUC.xaml;
 
-False
+True
 

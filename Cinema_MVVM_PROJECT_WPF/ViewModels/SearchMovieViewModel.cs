@@ -14,10 +14,9 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
     public class SearchMovieViewModel : BaseViewModel
     {
         public WrapPanel WrapPanel { get; set; }
-
+        public WrapPanel ShowMoviesWrapPanel { get; set; }
         public TextBox TextBox { get; set; }
         public RelayCommand SearchMovieCommand { get; set; }
-
         public RelayCommand BackCommand { get; set; }
 
         public SearchMovieViewModel()
@@ -44,11 +43,11 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
                             Movie = movies[i]
                         };
                         var uc = new SingleMovieUC();
+                        viewModel.ShowMoviesWrapPanel = ShowMoviesWrapPanel;
                         uc.DataContext = viewModel;
-
                         uc.Width = 250;
                         uc.Height = 350;
-                        uc.Margin = new System.Windows.Thickness(10,30,10,10);
+                        uc.Margin = new System.Windows.Thickness(10,40,10,10);
                         WrapPanel.Children.Add(uc);
                     }
                 }
