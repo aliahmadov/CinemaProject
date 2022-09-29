@@ -18,6 +18,8 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
 
         public RelayCommand ShowMoviesCommand { get; set; }
 
+        public RelayCommand OrganizeMoviesCommand { get; set; }
+
         public WrapPanel ShowMoviesWrapPanel { get; set; }
         public AdminHomeViewModel()
         {
@@ -51,6 +53,17 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
                 viewModel.WrapPanel = ShowView.moviesPanel;
                 App.MyGrid.Children.RemoveAt(0);
                 App.MyGrid.Children.Add(ShowView);
+            });
+
+            OrganizeMoviesCommand = new RelayCommand(c =>
+            {
+                var viewModel = new OrganizeMovieViewModel();
+                var view = new OrganizeMovieUC();
+                var ticketView = new TicketUC();
+                view.DataContext = viewModel;
+                view.ticket_panel.Children.Add(ticketView);
+                App.MyGrid.Children.RemoveAt(0);
+                App.MyGrid.Children.Add(view);
             });
         }
 

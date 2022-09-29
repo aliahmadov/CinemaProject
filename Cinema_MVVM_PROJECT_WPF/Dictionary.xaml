@@ -5,6 +5,10 @@
     <SolidColorBrush x:Key="secondColor" Color="#D7263D" ></SolidColorBrush>
     <SolidColorBrush x:Key="thirdColor" Color="#F1FAEE" ></SolidColorBrush>
 
+    <LinearGradientBrush x:Key="specialColor" StartPoint="0,0" EndPoint="1,1">
+        <GradientStop Color="#292F36" Offset="0.5" />
+        <GradientStop Color="#292F36" Offset="0.5" />
+    </LinearGradientBrush>
 
     <Style 
                 TargetType="Button" x:Key="NewGameButtonStyle">

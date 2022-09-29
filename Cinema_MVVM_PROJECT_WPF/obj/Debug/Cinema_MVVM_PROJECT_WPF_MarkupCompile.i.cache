@@ -12,9 +12,9 @@ DEBUG;TRACE
 C:\Users\eliah\source\repos\Cinema_MVVM_PROJECT_WPF\Cinema_MVVM_PROJECT_WPF\App.xaml
 112092300994
 
-30348565259
+31-1733523359
 16-868006016
 Dictionary.xaml;Views\MainWindow.xaml;Views\UserControls\AdminHomeUC.xaml;Views\UserControls\AdminSignUpUC.xaml;Views\UserControls\CinemaHomeUC.xaml;Views\UserControls\OrganizeMovieUC.xaml;Views\UserControls\SearchMovieUC.xaml;Views\UserControls\ShowMoviesUC.xaml;Views\UserControls\SingleMovieForShowUC.xaml;Views\UserControls\SingleMovieUC.xaml;Views\UserControls\TicketUC.xaml;
 
-False
+True
 

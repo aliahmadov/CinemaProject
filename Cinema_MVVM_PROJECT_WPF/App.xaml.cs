@@ -16,6 +16,7 @@ namespace Cinema_MVVM_PROJECT_WPF
     {
         public static Grid MyGrid;
         public static UIElement BackPage;
+        public static Image Image;
         public App()
         {
 

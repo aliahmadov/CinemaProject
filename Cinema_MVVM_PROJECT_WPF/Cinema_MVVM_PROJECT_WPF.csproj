@@ -65,10 +65,14 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\MovieStock.cs" />
+    <Compile Include="Models\Place.cs" />
+    <Compile Include="Models\Ticket.cs" />
     <Compile Include="Services\MovieService.cs" />
     <Compile Include="ViewModels\AdminHomeViewModel.cs" />
     <Compile Include="ViewModels\AdminSignViewModel.cs" />
     <Compile Include="ViewModels\CinemaHomeUCViewModel.cs" />
+    <Compile Include="ViewModels\OrganizeMovieViewModel.cs" />
     <Compile Include="ViewModels\SearchMovieViewModel.cs" />
     <Compile Include="ViewModels\ShowMoviesViewModel.cs" />
     <Compile Include="ViewModels\SingleMovieForShowViewModel.cs" />
@@ -82,6 +86,9 @@
     <Compile Include="Views\UserControls\CinemaHomeUC.xaml.cs">
       <DependentUpon>CinemaHomeUC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\UserControls\OrganizeMovieUC.xaml.cs">
+      <DependentUpon>OrganizeMovieUC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\UserControls\SearchMovieUC.xaml.cs">
       <DependentUpon>SearchMovieUC.xaml</DependentUpon>
     </Compile>
@@ -93,6 +100,9 @@
     </Compile>
     <Compile Include="Views\UserControls\SingleMovieUC.xaml.cs">
       <DependentUpon>SingleMovieUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\TicketUC.xaml.cs">
+      <DependentUpon>TicketUC.xaml</DependentUpon>
     </Compile>
     <Page Include="Dictionary.xaml">
       <SubType>Designer</SubType>
@@ -125,6 +135,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\UserControls\OrganizeMovieUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\UserControls\SearchMovieUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -138,6 +152,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\UserControls\SingleMovieUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControls\TicketUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -183,6 +201,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\barCode.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
