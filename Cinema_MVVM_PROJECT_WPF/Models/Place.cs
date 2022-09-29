@@ -9,6 +9,6 @@ namespace Cinema_MVVM_PROJECT_WPF.Models
     public class Place
     {
         public string Row { get; set; }
-        public int SeatNumber { get; set; }
+        public string SeatNumber { get; set; }
     }
 }

@@ -36,5 +36,11 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
             set { place = value; OnPropertyChanged(); }
         }
 
+        public TicketUCViewModel()
+        {
+            Place = new Place();
+            Ticket = new TicketItem();
+        }
+
     }
 }

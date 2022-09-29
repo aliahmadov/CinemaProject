@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace Cinema_MVVM_PROJECT_WPF.ViewModels
 {
@@ -58,18 +59,28 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
 
             OrganizeMoviesCommand = new RelayCommand(c =>
             {
+                var timeUC = new TimePickerUC();
+                var timeUCviewModel = new TimePickerViewModel();
+                timeUC.Width = 50;
+                timeUC.DataContext = timeUCviewModel;
+
                 var viewModel = new OrganizeMovieViewModel();
                 var view = new OrganizeMovieUC();
+
+                view.timePicker_StackPanel.Children.Add(timeUC);
                 var ticketView = new TicketUC();
+                var ticketViewModel = new TicketUCViewModel();
+                ticketView.DataContext = ticketViewModel;
 
                 view.DataContext = viewModel;
 
                 viewModel.DatePicker = view.datePicker;
                 viewModel.PriceTxtBox= view.priceTxtbox;
-                viewModel.TimePicker = view.timePicker;
                 viewModel.WrapPanel = ShowView.moviesPanel;
                 viewModel.ComboBox = view.movieComboBox;
 
+
+                viewModel.TicketViewModel = ticketViewModel;
                 view.ticket_panel.Children.Add(ticketView);
                 App.MyGrid.Children.RemoveAt(0);
                 App.MyGrid.Children.Add(view);

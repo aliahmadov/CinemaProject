@@ -19,24 +19,24 @@
             </StackPanel>
 
             <StackPanel Grid.Column="1" Name="admin_panel">
-                <ComboBox Name="movieComboBox"  Margin="10" Height="30" ItemsSource="{Binding Movies}">
-                    <!--<i:Interaction.Triggers>
+                <ComboBox Name="movieComboBox"  Margin="10" Height="50" ItemsSource="{Binding Movies}">
+                    <i:Interaction.Triggers>
                         <i:EventTrigger EventName="SelectionChanged" >
-                            <i:InvokeCommandAction Command="{Binding SelectedCommand}" CommandParameter="{Binding ElementName=comboBox,Path=SelectedItem}">
+                            <i:InvokeCommandAction Command="{Binding SelectedCommand}" CommandParameter="{Binding ElementName=movieComboBox,Path=SelectedItem}">
 
                             </i:InvokeCommandAction>
                         </i:EventTrigger>
-                    </i:Interaction.Triggers>-->
+                    </i:Interaction.Triggers>
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
                             <ComboBoxItem>
                                 <StackPanel Orientation="Horizontal">
-                                    <Image Width="200" Height="150" 
+                                    <Image Width="100" Height="50" 
                                        Source="{Binding ImagePath}" Stretch="Fill" Margin="10"></Image>
                                     <TextBlock Text="{Binding Name}"
                                            HorizontalAlignment="Center"
                                            VerticalAlignment="Center"
-                                           FontSize="30"
+                                           FontSize="20"
                                            FontFamily="Verdana"
                                            FontWeight="DemiBold" Margin="10">
                                     </TextBlock>
@@ -69,18 +69,18 @@
 
                 <Border Height="60" Margin="8,35,10,0" BorderBrush="{StaticResource secondColor}" BorderThickness="1">
                     <StackPanel Margin="10" Orientation="Horizontal">
-                        <StackPanel Height="20" Margin="10,0,0,0" Background="White">
-                            <materialDesign:TimePicker Width="30" Height="20" Is24Hours="True"
-                                                   Foreground="{StaticResource thirdColor}"
-                                                    Background="Green"    
-                                                       Name="timePicker"
-                                                   />
+                        <StackPanel Name="timePicker_StackPanel" Height="30"  Margin="0,7,0,0" Background="{StaticResource secondColor}">
+                          
                         </StackPanel>
-                        <StackPanel>
-                            <Label Margin="0,5,0,0" Foreground="{StaticResource thirdColor}">Select Time</Label>
-                        </StackPanel>
-                        <DatePicker Name="datePicker" Margin="10,7,0,0" Width="150" >
-
+                        <DatePicker Name="datePicker"  Margin="10,7,0,0" Width="150"
+                                    SelectedDateFormat="Short">
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="SelectedDateChanged">
+                                    <i:InvokeCommandAction Command="{Binding DateChangedCommand}">
+                                        
+                                    </i:InvokeCommandAction>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
                         </DatePicker>
                         <RepeatButton Margin="10,0,0,0" Width="35" Content="-" FontWeight="Bold"
                                   Background="{StaticResource secondColor}"
@@ -94,15 +94,16 @@
                         </RepeatButton>
 
                         <Label FontSize="20" Foreground="{StaticResource thirdColor}"
-                           Width="75" Height="40" HorizontalContentAlignment="Center">
-                            0
+                           Width="65" Height="40" HorizontalContentAlignment="Center"
+                               Content="{Binding Count}">
+                            
                         </Label>
 
 
                         <RepeatButton Margin="10,0,0,0" Width="35" Content="+" FontWeight="Bold"
                                   Background="{StaticResource secondColor}"
                                   Foreground="{StaticResource thirdColor}"
-                                  FontSize="18">
+                                  FontSize="18" Command="{Binding PlusCommand}">
                             <RepeatButton.Resources>
                                 <Style TargetType="{x:Type Border}">
                                     <Setter Property="CornerRadius" Value="20"></Setter>

@@ -15,16 +15,31 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
 {
     public class OrganizeMovieViewModel : BaseViewModel
     {
+        private TicketUCViewModel ticketViewModel;
+
+        public TicketUCViewModel TicketViewModel
+        {
+            get { return ticketViewModel; }
+            set { ticketViewModel = value; OnPropertyChanged(); }
+        }
+
+        private TicketItem ticket;
+
+        public TicketItem Ticket
+        {
+            get { return ticket; }
+            set { ticket = value; }
+        }
 
         public ComboBox ComboBox { get; set; }
         public WrapPanel WrapPanel { get; set; }
         public DatePicker DatePicker { get; set; }
-
-        public TimePicker TimePicker { get; set; }
-
+        public RelayCommand SelectedCommand { get; set; }
         public RelayCommand PlusCommand { get; set; }
 
         public RelayCommand MinusCommand { get; set; }
+
+        public RelayCommand DateChangedCommand { get; set; }
 
         private int count;
 
@@ -50,6 +65,16 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
         public RelayCommand BackCommand { get; set; }
 
         public RelayCommand GetMoviesCommand { get; set; }
+
+        private Movie movie;
+
+        public Movie SelectedMovie
+        {
+            get { return movie; }
+            set { movie = value; OnPropertyChanged(); }
+
+        }
+
         private ObservableCollection<Movie> GetMovies()
         {
             foreach (var item in WrapPanel.Children)
@@ -91,6 +116,41 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
                 }
 
             });
+
+
+            SelectedCommand = new RelayCommand(d =>
+            {
+                var selectedMovie = d as Movie;
+                SelectedMovie = selectedMovie;
+                TicketViewModel.Movie = SelectedMovie;
+                Place place = new Place
+                {
+                    Row = "X",
+                    SeatNumber = "X"
+                };
+                TicketViewModel.Place = place;
+            });
+
+            PlusCommand = new RelayCommand(d =>
+            {
+                Count++;
+            });
+
+            MinusCommand = new RelayCommand(d =>
+            {
+                if (Count > 0)
+                {
+                    Count--;
+                }
+            });
+
+            DateChangedCommand = new RelayCommand(d =>
+            {
+                var Ticket = new TicketItem();
+                Ticket.DateTime = DatePicker.SelectedDate;
+                TicketViewModel.Ticket = Ticket;
+            });
+
 
         }
 
