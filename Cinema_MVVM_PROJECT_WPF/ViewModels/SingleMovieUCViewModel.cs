@@ -24,6 +24,7 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
             set { movie = value; OnPropertyChanged(); }
         }
 
+        
         public RelayCommand AddMovieCommand { get; set; }
 
         public SingleMovieUCViewModel()

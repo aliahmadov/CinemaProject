@@ -12,6 +12,7 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
 {
     public class ShowMoviesViewModel:BaseViewModel
     {
+
         public WrapPanel WrapPanel { get; set; }
         public RelayCommand BackCommand { get; set; }
 

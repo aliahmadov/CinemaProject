@@ -13,7 +13,7 @@
         </Grid.RowDefinitions>
 
         <StackPanel>
-            <Image Height="180" Source="/Images/titanic.jpg" Stretch="Fill">
+            <Image Height="180" Source="{Binding Movie.ImagePath}" Stretch="Fill">
                 <Image.Effect>
                     <BlurEffect Radius="10" KernelType="Gaussian"></BlurEffect>
                 </Image.Effect>
@@ -22,12 +22,12 @@
         </StackPanel>
 
         <StackPanel>
-            <Image Width="150" Height="180" Source="/Images/titanic.jpg" Stretch="Fill">
+            <Image Width="150" Height="180" Source="{Binding Movie.ImagePath}" Stretch="Fill">
 
             </Image>
         </StackPanel>
         <StackPanel Height="45" VerticalAlignment="Bottom">
-            <Image Source="/Images/titanic.jpg" Height="40" Stretch="Fill" >
+            <Image Source="{Binding Movie.ImagePath}" Height="40" Stretch="Fill" >
                 <Image.Effect>
                     <BlurEffect Radius="10" KernelType="Gaussian">
 
@@ -38,8 +38,8 @@
         <StackPanel VerticalAlignment="Bottom" Height="50">
             <Label Margin="10,0,0,0" VerticalAlignment="Bottom"
                    Foreground="{StaticResource thirdColor}"
-                   FontWeight="Bold" FontSize="25">
-                Titanic
+                   FontWeight="Bold" FontSize="25" Content="{Binding Movie.Name}">
+               
             </Label>
         </StackPanel>
         <Grid Grid.Row="1" Background="{StaticResource thirdColor}">
@@ -56,8 +56,8 @@
                         ROW
                     </Label>
                     <Label Margin="38,0,5,5" Foreground="{StaticResource mainColor}"
-                       FontWeight="DemiBold" FontSize="35">
-                        15
+                       FontWeight="DemiBold" FontSize="35" Content="{Binding Place.Row}">
+                        
                     </Label>
                 </StackPanel>
 
@@ -67,8 +67,8 @@
                         SEAT
                     </Label>
                     <Label Margin="32,0,5,5" Foreground="{StaticResource mainColor}"
-                       FontWeight="DemiBold" FontSize="35">
-                        16
+                       FontWeight="DemiBold" FontSize="35" Content="{Binding Place.SeatNumber}">
+                        
                     </Label>
                 </StackPanel>
             </StackPanel>
@@ -81,8 +81,8 @@
                         PRICE
                     </Label>
                     <Label Margin="25,0,5,5" Foreground="{StaticResource mainColor}"
-                       FontWeight="DemiBold" FontSize="13">
-                        15
+                       FontWeight="DemiBold" FontSize="13" Content="{Binding Ticket.Price}">
+                        
                     </Label>
                 </StackPanel>
 
@@ -92,8 +92,8 @@
                         DATE
                     </Label>
                     <Label Margin="16,0,5,5" Foreground="{StaticResource mainColor}"
-                       FontWeight="DemiBold" FontSize="13">
-                        12 JULY
+                       FontWeight="DemiBold" FontSize="13" Content="{Binding Ticket.DateTime}">
+                        
                     </Label>
                 </StackPanel>
                 <StackPanel Orientation="Vertical" Width="82">
@@ -102,8 +102,8 @@
                         TIME
                     </Label>
                     <Label Margin="19,0,5,5" Foreground="{StaticResource mainColor}"
-                       FontWeight="DemiBold" FontSize="13">
-                        18:00
+                       FontWeight="DemiBold" FontSize="13" Content="{Binding Ticket.Time}">
+                        
                     </Label>
 
                 </StackPanel>
@@ -120,8 +120,9 @@
                 <Image Height="20" Source="/Images/barCode.jpg" Stretch="Fill">
 
                 </Image>
-                <Label HorizontalAlignment="Center" VerticalAlignment="Top">
-                    7824726497263938490284
+                <Label HorizontalAlignment="Center" VerticalAlignment="Top"
+                       Content="{Binding Ticket.Guid}">
+                    
                 </Label>
             </StackPanel>
         </Grid>

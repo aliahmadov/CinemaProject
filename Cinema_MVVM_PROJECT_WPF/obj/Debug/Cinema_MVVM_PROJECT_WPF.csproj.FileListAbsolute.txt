@@ -41,3 +41,8 @@ C:\Users\eliah\source\repos\Cinema_MVVM_PROJECT_WPF\Cinema_MVVM_PROJECT_WPF\obj\
 C:\Users\eliah\source\repos\Cinema_MVVM_PROJECT_WPF\Cinema_MVVM_PROJECT_WPF\obj\Debug\Views\UserControls\OrganizeMovieUC.baml
 C:\Users\eliah\source\repos\Cinema_MVVM_PROJECT_WPF\Cinema_MVVM_PROJECT_WPF\obj\Debug\Views\UserControls\TicketUC.g.cs
 C:\Users\eliah\source\repos\Cinema_MVVM_PROJECT_WPF\Cinema_MVVM_PROJECT_WPF\obj\Debug\Views\UserControls\TicketUC.baml
+C:\Users\eliah\source\repos\Cinema_MVVM_PROJECT_WPF\Cinema_MVVM_PROJECT_WPF\bin\Debug\MaterialDesignColors.dll
+C:\Users\eliah\source\repos\Cinema_MVVM_PROJECT_WPF\Cinema_MVVM_PROJECT_WPF\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\eliah\source\repos\Cinema_MVVM_PROJECT_WPF\Cinema_MVVM_PROJECT_WPF\bin\Debug\MaterialDesignColors.pdb
+C:\Users\eliah\source\repos\Cinema_MVVM_PROJECT_WPF\Cinema_MVVM_PROJECT_WPF\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\eliah\source\repos\Cinema_MVVM_PROJECT_WPF\Cinema_MVVM_PROJECT_WPF\bin\Debug\MaterialDesignThemes.Wpf.xml

@@ -11,7 +11,7 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
 {
     public class AdminHomeViewModel : BaseViewModel
     {
-        
+
         public RelayCommand BackCommand { get; set; }
 
         public RelayCommand SearchMoviesCommand { get; set; }
@@ -30,7 +30,7 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
 
                 App.MyGrid.Children.RemoveAt(0);
                 App.MyGrid.Children.Add(BackPage);
-                
+
             });
 
             SearchMoviesCommand = new RelayCommand(c =>
@@ -40,7 +40,7 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
                 viewModel.WrapPanel = view.moviesPanel;
                 viewModel.TextBox = view.movieTxtb;
                 viewModel.ShowMoviesWrapPanel = ShowView.moviesPanel;
-                view.DataContext=viewModel;
+                view.DataContext = viewModel;
                 App.MyGrid.Children.RemoveAt(0);
                 App.MyGrid.Children.Add(view);
             });
@@ -50,6 +50,7 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
                 var viewModel = new ShowMoviesViewModel();
                 ShowView.DataContext = viewModel;
                 viewModel.TextBox = ShowView.movieTxtb;
+
                 viewModel.WrapPanel = ShowView.moviesPanel;
                 App.MyGrid.Children.RemoveAt(0);
                 App.MyGrid.Children.Add(ShowView);
@@ -60,15 +61,23 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
                 var viewModel = new OrganizeMovieViewModel();
                 var view = new OrganizeMovieUC();
                 var ticketView = new TicketUC();
+
                 view.DataContext = viewModel;
+
+                viewModel.DatePicker = view.datePicker;
+                viewModel.PriceTxtBox= view.priceTxtbox;
+                viewModel.TimePicker = view.timePicker;
+                viewModel.WrapPanel = ShowView.moviesPanel;
+                viewModel.ComboBox = view.movieComboBox;
+
                 view.ticket_panel.Children.Add(ticketView);
                 App.MyGrid.Children.RemoveAt(0);
                 App.MyGrid.Children.Add(view);
             });
         }
 
-       
 
-       
+
+
     }
 }
