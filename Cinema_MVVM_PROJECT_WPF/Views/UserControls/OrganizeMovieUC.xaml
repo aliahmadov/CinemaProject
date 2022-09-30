@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Cinema_MVVM_PROJECT_WPF.Views.UserControls" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="500" d:DesignWidth="800">
     <Grid>
         <Grid>
             <Grid.ColumnDefinitions>
@@ -70,22 +70,17 @@
                 <Border Height="60" Margin="8,35,10,0" BorderBrush="{StaticResource secondColor}" BorderThickness="1">
                     <StackPanel Margin="10" Orientation="Horizontal">
                         <StackPanel Name="timePicker_StackPanel" Height="30"  Margin="0,7,0,0" Background="{StaticResource secondColor}">
-                          
+
                         </StackPanel>
+                        <local:TimePickerUC x:Name="timePicker"></local:TimePickerUC>
                         <DatePicker Name="datePicker"  Margin="10,7,0,0" Width="150"
                                     SelectedDateFormat="Short">
-                            <i:Interaction.Triggers>
-                                <i:EventTrigger EventName="SelectedDateChanged">
-                                    <i:InvokeCommandAction Command="{Binding DateChangedCommand}">
-                                        
-                                    </i:InvokeCommandAction>
-                                </i:EventTrigger>
-                            </i:Interaction.Triggers>
                         </DatePicker>
                         <RepeatButton Margin="10,0,0,0" Width="35" Content="-" FontWeight="Bold"
                                   Background="{StaticResource secondColor}"
                                   Foreground="{StaticResource thirdColor}"
-                                  FontSize="18" >
+                                  FontSize="18" 
+                                      Command="{Binding MinusCommand}">
                             <RepeatButton.Resources>
                                 <Style TargetType="{x:Type Border}">
                                     <Setter Property="CornerRadius" Value="20"></Setter>
@@ -96,7 +91,7 @@
                         <Label FontSize="20" Foreground="{StaticResource thirdColor}"
                            Width="65" Height="40" HorizontalContentAlignment="Center"
                                Content="{Binding Count}">
-                            
+
                         </Label>
 
 
@@ -119,7 +114,8 @@
                         <Label FontSize="30" Foreground="{StaticResource thirdColor}">Price</Label>
                         <TextBox Name="priceTxtbox" TextAlignment="Center" Height="35" Margin="10" FontSize="20" Width="120" Foreground="{StaticResource secondColor }"></TextBox>
                         <Label Margin="10" FontSize="22" Width="100" HorizontalContentAlignment="Center"
-                           Foreground="{StaticResource thirdColor}">0</Label>
+                           Foreground="{StaticResource thirdColor}" 
+                               Content="{Binding TotalVolume, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></Label>
                         <Label Margin="10" FontSize="22" Width="25" HorizontalContentAlignment="Left"
                            Foreground="{StaticResource secondColor}"
                            FontWeight="Bold">$</Label>
@@ -130,15 +126,22 @@
                     </StackPanel>
 
                 </Border>
-                <Button Width="300"  Background="{StaticResource secondColor}" FontWeight="Bold" FontSize="30" Margin="0,25,0,20" Foreground="{StaticResource thirdColor}"
-                Command="{Binding SearchMovieCommand}">Done</Button>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Image Margin="5" Source="{Binding ImagePath}" Width="30" Height="30">
+                        
+                    </Image>
+                   <Button Margin="0,10,11,10" HorizontalAlignment="Right"  Background="{StaticResource secondColor}" FontWeight="Bold" FontSize="20" Foreground="{StaticResource thirdColor}"
+                Command="{Binding ConfirmCommand}">Confirm</Button>
+                </StackPanel>
+                <Button Width="300"  Background="{StaticResource secondColor}" FontWeight="Bold" FontSize="30" Margin="0,5,0,20" Foreground="{StaticResource thirdColor}"
+                Command="{Binding DoneCommand}">Done</Button>
             </StackPanel>
 
             <StackPanel Grid.Column="0">
                 <Image Source="/Images/leftarrow.png">
                     <Image.InputBindings >
                         <MouseBinding Gesture="LeftClick" Command="{Binding BackCommand}">
-                            
+
                         </MouseBinding>
                     </Image.InputBindings>
                 </Image>

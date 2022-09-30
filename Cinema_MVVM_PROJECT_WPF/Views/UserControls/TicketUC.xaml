@@ -55,8 +55,9 @@
                        FontWeight="DemiBold" FontSize="14">
                         ROW
                     </Label>
-                    <Label Margin="38,0,5,5" Foreground="{StaticResource mainColor}"
-                       FontWeight="DemiBold" FontSize="35" Content="{Binding Place.Row}">
+                    <Label Margin="0,0,5,5" Foreground="{StaticResource mainColor}"
+                       FontWeight="DemiBold" FontSize="35" HorizontalContentAlignment="Center"
+                           Content="{Binding Place.Row}">
                         
                     </Label>
                 </StackPanel>
@@ -66,8 +67,9 @@
                        FontWeight="DemiBold" FontSize="14">
                         SEAT
                     </Label>
-                    <Label Margin="32,0,5,5" Foreground="{StaticResource mainColor}"
-                       FontWeight="DemiBold" FontSize="35" Content="{Binding Place.SeatNumber}">
+                    <Label Margin="0,0,0,5" Foreground="{StaticResource mainColor}"
+                       FontWeight="DemiBold" FontSize="35" Content="{Binding Place.SeatNumber}"
+                           HorizontalContentAlignment="Center">
                         
                     </Label>
                 </StackPanel>
@@ -80,8 +82,9 @@
                        FontWeight="DemiBold" FontSize="14">
                         PRICE
                     </Label>
-                    <Label Margin="25,0,5,5" Foreground="{StaticResource mainColor}"
-                       FontWeight="DemiBold" FontSize="13" Content="{Binding Ticket.Price}">
+                    <Label Margin="0,0,5,5" Foreground="{StaticResource mainColor}"
+                       FontWeight="DemiBold" FontSize="13" Content="{Binding Ticket.Price}"
+                           HorizontalContentAlignment="Center">
                         
                     </Label>
                 </StackPanel>
@@ -91,8 +94,9 @@
                        FontWeight="DemiBold" FontSize="14">
                         DATE
                     </Label>
-                    <Label Margin="2,0,5,5" Foreground="{StaticResource mainColor}"
-                       FontWeight="DemiBold" FontSize="13"  Content="{Binding Ticket.DateTime}">
+                    <Label Foreground="{StaticResource mainColor}"
+                       FontWeight="DemiBold" FontSize="13"  
+                           HorizontalContentAlignment="Center" Content="{Binding Ticket.DateTime}">
                         
                     </Label>
                 </StackPanel>
@@ -101,9 +105,10 @@
                        FontWeight="DemiBold" FontSize="14">
                         TIME
                     </Label>
-                    <Label Margin="19,0,5,5" Foreground="{StaticResource mainColor}"
-                       FontWeight="DemiBold" FontSize="13" Content="{Binding Ticket.Time}">
-                        
+                    <Label  Foreground="{StaticResource mainColor}"
+                       FontWeight="DemiBold" FontSize="13" 
+                           HorizontalContentAlignment="Center" Content="{Binding Ticket.Time}">
+                  
                     </Label>
 
                 </StackPanel>

@@ -12,7 +12,8 @@ namespace Cinema_MVVM_PROJECT_WPF.Models
         public Movie Movie { get; set; }
         public Place Place { get; set; }
         public DateTime? DateTime { get; set; }
-        public DateTime? Time { get; set; }
+        public string Time { get; set; }
+        public double Price { get; set; }
         public int Count { get; set; }
         public string Hall { get; set; }
     }

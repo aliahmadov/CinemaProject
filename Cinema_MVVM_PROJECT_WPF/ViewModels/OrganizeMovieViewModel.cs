@@ -2,6 +2,7 @@
 using Cinema_MVVM_PROJECT_WPF.Models;
 using Cinema_MVVM_PROJECT_WPF.Views.UserControls;
 using MaterialDesignThemes.Wpf;
+using Syncfusion.Windows.Controls.Input;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -15,6 +16,27 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
 {
     public class OrganizeMovieViewModel : BaseViewModel
     {
+
+
+        private double totalVolume;
+
+        public double TotalVolume
+        {
+            get { return totalVolume; }
+            set { totalVolume = value; OnPropertyChanged(); }
+        }
+
+
+
+        private string imagePath;
+
+        public string ImagePath
+        {
+            get { return imagePath; }
+            set { imagePath = value; OnPropertyChanged(); }
+        }
+
+
         private TicketUCViewModel ticketViewModel;
 
         public TicketUCViewModel TicketViewModel
@@ -34,12 +56,13 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
         public ComboBox ComboBox { get; set; }
         public WrapPanel WrapPanel { get; set; }
         public DatePicker DatePicker { get; set; }
+        public SfTimePicker TimePicker { get; set; }
         public RelayCommand SelectedCommand { get; set; }
         public RelayCommand PlusCommand { get; set; }
 
         public RelayCommand MinusCommand { get; set; }
 
-        public RelayCommand DateChangedCommand { get; set; }
+        public RelayCommand ConfirmCommand { get; set; }
 
         private int count;
 
@@ -59,12 +82,13 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
             set { price = value; OnPropertyChanged(); }
         }
 
-        public ObservableCollection<Movie> Movies { get; set; }
         public RelayCommand DoneCommand { get; set; }
 
         public RelayCommand BackCommand { get; set; }
 
         public RelayCommand GetMoviesCommand { get; set; }
+
+        public ObservableCollection<Movie> Movies { get; set; }
 
         private Movie movie;
 
@@ -93,8 +117,10 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
         }
         public OrganizeMovieViewModel()
         {
+            ImagePath = "/Images/cross.png";
             Movies = new ObservableCollection<Movie>();
             BackPage = App.MyGrid.Children[0];
+
             BackCommand = new RelayCommand(c =>
             {
                 App.MyGrid.Children.RemoveAt(0);
@@ -123,17 +149,12 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
                 var selectedMovie = d as Movie;
                 SelectedMovie = selectedMovie;
                 TicketViewModel.Movie = SelectedMovie;
-                Place place = new Place
-                {
-                    Row = "X",
-                    SeatNumber = "X"
-                };
-                TicketViewModel.Place = place;
             });
 
             PlusCommand = new RelayCommand(d =>
             {
-                Count++;
+                if (Count <= 30)
+                    Count++;
             });
 
             MinusCommand = new RelayCommand(d =>
@@ -144,13 +165,54 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
                 }
             });
 
-            DateChangedCommand = new RelayCommand(d =>
-            {
-                var Ticket = new TicketItem();
-                Ticket.DateTime = DatePicker.SelectedDate;
-                TicketViewModel.Ticket = Ticket;
-            });
 
+
+            ConfirmCommand = new RelayCommand(d =>
+            {
+
+                var place = new Place
+                {
+                    Row = "X",
+                    SeatNumber = "X"
+                };
+
+                bool isParsed = Double.TryParse(PriceTxtBox.Text, out double price);
+                DateTime dt = DateTime.Parse(TimePicker.Value.ToString());
+                var time = dt.ToString("h:mm tt");
+                if (TimePicker.Value.ToString() != "05:44 PM" && DatePicker.SelectedDate != null
+                && Count != 0 && SelectedMovie != null)
+                {
+
+                    if (isParsed)
+                    {
+                        var ticket = new TicketItem()
+                        {
+                            Count = Count,
+                            Guid = Guid.NewGuid(),
+                            Movie = SelectedMovie,
+                            DateTime = DatePicker.SelectedDate,
+                            Time = time,
+                            Place = place,
+                            Price = price
+                        };
+                        TicketViewModel.Ticket = ticket;
+                        TicketViewModel.Place = place;
+                        TicketViewModel.Movie = SelectedMovie;
+                        ImagePath = "/Images/tick.png";
+                        TotalVolume = Count * price;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Enter valid price value!", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Fill all fields", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+
+
+            });
 
         }
 

@@ -15,7 +15,8 @@
                                  Background="{StaticResource secondColor}"
                                  FontWeight="Bold"
                                  Foreground="{StaticResource thirdColor}"
-                                 Height="30"                              
+                                 Height="30"      
+                                 Value="17:44"
                                  >
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="ValueChanged">
