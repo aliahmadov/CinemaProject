@@ -27,12 +27,26 @@
                         </Style>
                     </Label.Resources>
                 </Label>
+                <Button Width="50" Height="30" Canvas.Left="0" Canvas.Top="-35" ToolTip="Trailer"
+                        Background="{StaticResource mainColor}" Command="{Binding TrailerCommand}"
+                        Content="Trailer" Foreground="{StaticResource thirdColor}"
+                     >
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="10">
 
+                            </Setter>
+                            <Style.Triggers>
+
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Resources>
+                </Button>
                 <Button Width="30" Height="30" Canvas.Left="221" Canvas.Top="-35" ToolTip="Add Movie"
                         Background="{StaticResource mainColor}" Command="{Binding AddMovieCommand}"
-                        Click="Button_Click">
+                     >
                     <Image Width="20" Height="20" Source="/Images/add.png">
-                        
+
                     </Image>
 
                     <Button.Resources>
@@ -56,12 +70,6 @@
                                         <DoubleAnimation  Storyboard.TargetName="singleMovieUC"
                                       Storyboard.TargetProperty = "(UserControl.Opacity)"
                                       To="0"  Duration="0:0:2"/>
-                                        <!--<Storyboard AutoReverse="False">
-
-                                            <DoubleAnimation  Storyboard.TargetName="singleMovieUC"
-                                      Storyboard.TargetProperty="(Window.Width)"
-                                        To="300" Duration="0:0:2"/>
-                                        </Storyboard>-->
                                     </Storyboard>
                                 </BeginStoryboard>
 
@@ -70,7 +78,7 @@
                     </Button.Triggers>
 
                 </Button>
-                
+
                 <Image Source="{Binding Movie.ImagePath}" Name="image" Width="250" Height="300"  Stretch="Fill">
 
                 </Image>

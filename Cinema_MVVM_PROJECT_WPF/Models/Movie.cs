@@ -13,5 +13,7 @@ namespace Cinema_MVVM_PROJECT_WPF.Models
 
         public string Rating { get; set; }
         public string ImagePath { get; set; }
+
+        public string VideoID { get; set; }
     }
 }

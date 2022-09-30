@@ -200,6 +200,7 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
                         TicketViewModel.Movie = SelectedMovie;
                         ImagePath = "/Images/tick.png";
                         TotalVolume = Count * price;
+                        Ticket = ticket;
                     }
                     else
                     {
@@ -211,6 +212,11 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
                     MessageBox.Show("Fill all fields", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
 
+
+            });
+
+            DoneCommand = new RelayCommand(d =>
+            {
 
             });
 

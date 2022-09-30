@@ -4,13 +4,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Cinema_MVVM_PROJECT_WPF.Views.UserControls"
-            xmlns:local1="clr-namespace:Cinema_MVVM_PROJECT_WPF.Views.UserControls"
+            xmlns:local1="clr-namespace:Cinema_MVVM_PROJECT_WPF.Views.UserControls" xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="650" d:DesignWidth="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
-            <RowDefinition Height="2.3*"></RowDefinition>
+            <RowDefinition Height="0.7*"></RowDefinition>
         </Grid.RowDefinitions>
         <StackPanel>
             <Image HorizontalAlignment="Left" Width="50" Height="30" Source="/Images/leftarrow.png">
@@ -19,8 +19,17 @@
                 </Image.InputBindings>
             </Image>
             <TextBox Name="movieTxtb" GotFocus="TextBox_GotFocus" Margin="30,0,30,0" Foreground="Gray"  FontSize="30">Search</TextBox>
-            <Button Width="300"  Background="{StaticResource secondColor}" FontWeight="Bold" FontSize="30" Margin="0,10,0,20" Foreground="{StaticResource thirdColor}"
+            <Button Width="300"  Background="{StaticResource secondColor}" FontWeight="Bold" FontSize="25" Margin="0,10,0,0" Foreground="{StaticResource thirdColor}"
                 Command="{Binding SearchMovieCommand}">Search</Button>
+            <Label Name="trailer_Label" FontSize="25" FontWeight="Bold" Foreground="{StaticResource thirdColor}"
+                   Visibility="Hidden" Margin="25,10,0,0"> Movie Trailer</Label>
+            <StackPanel>
+                <wv2:WebView2 Name="webView"
+                 Width="600" HorizontalAlignment="Left"
+                          Height="200" Margin="10" Visibility="Hidden"
+                              Source="https://www.microsoft.com"
+   />
+            </StackPanel>
 
 
 

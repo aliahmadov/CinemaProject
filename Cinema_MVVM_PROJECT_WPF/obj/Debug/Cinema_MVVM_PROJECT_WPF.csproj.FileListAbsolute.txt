@@ -58,3 +58,15 @@ C:\Users\eliah\source\repos\Cinema_MVVM_PROJECT_WPF\Cinema_MVVM_PROJECT_WPF\bin\
 C:\Users\eliah\source\repos\Cinema_MVVM_PROJECT_WPF\Cinema_MVVM_PROJECT_WPF\obj\Debug\Views\UserControls\TimePickerUC.g.cs
 C:\Users\eliah\source\repos\Cinema_MVVM_PROJECT_WPF\Cinema_MVVM_PROJECT_WPF\obj\Debug\Views\UserControls\TimePickerUC.baml
 C:\Users\eliah\source\repos\Cinema_MVVM_PROJECT_WPF\Cinema_MVVM_PROJECT_WPF\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\eliah\source\repos\Cinema_MVVM_PROJECT_WPF\Cinema_MVVM_PROJECT_WPF\bin\Debug\runtimes\win-x86\native\WebView2Loader.dll
+C:\Users\eliah\source\repos\Cinema_MVVM_PROJECT_WPF\Cinema_MVVM_PROJECT_WPF\bin\Debug\runtimes\win-x64\native\WebView2Loader.dll
+C:\Users\eliah\source\repos\Cinema_MVVM_PROJECT_WPF\Cinema_MVVM_PROJECT_WPF\bin\Debug\runtimes\win-arm64\native\WebView2Loader.dll
+C:\Users\eliah\source\repos\Cinema_MVVM_PROJECT_WPF\Cinema_MVVM_PROJECT_WPF\bin\Debug\Microsoft.Web.WebView2.Core.dll
+C:\Users\eliah\source\repos\Cinema_MVVM_PROJECT_WPF\Cinema_MVVM_PROJECT_WPF\bin\Debug\Microsoft.Web.WebView2.WinForms.dll
+C:\Users\eliah\source\repos\Cinema_MVVM_PROJECT_WPF\Cinema_MVVM_PROJECT_WPF\bin\Debug\Microsoft.Web.WebView2.Wpf.dll
+C:\Users\eliah\source\repos\Cinema_MVVM_PROJECT_WPF\Cinema_MVVM_PROJECT_WPF\bin\Debug\Microsoft.Web.WebView2.Core.xml
+C:\Users\eliah\source\repos\Cinema_MVVM_PROJECT_WPF\Cinema_MVVM_PROJECT_WPF\bin\Debug\Microsoft.Web.WebView2.WinForms.xml
+C:\Users\eliah\source\repos\Cinema_MVVM_PROJECT_WPF\Cinema_MVVM_PROJECT_WPF\bin\Debug\Microsoft.Web.WebView2.Wpf.xml
+C:\Users\eliah\source\repos\Cinema_MVVM_PROJECT_WPF\Cinema_MVVM_PROJECT_WPF\obj\Debug\Views\UserUCs\UserHomeUC.g.cs
+C:\Users\eliah\source\repos\Cinema_MVVM_PROJECT_WPF\Cinema_MVVM_PROJECT_WPF\obj\Debug\Cinema_MVVM_PROJECT_WPF_Content.g.cs
+C:\Users\eliah\source\repos\Cinema_MVVM_PROJECT_WPF\Cinema_MVVM_PROJECT_WPF\obj\Debug\Views\UserUCs\UserHomeUC.baml

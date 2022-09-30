@@ -41,6 +41,9 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
                 viewModel.WrapPanel = view.moviesPanel;
                 viewModel.TextBox = view.movieTxtb;
                 viewModel.ShowMoviesWrapPanel = ShowView.moviesPanel;
+                viewModel.WebView = view.webView;
+                viewModel.Trailer_Label = view.trailer_Label;
+
                 view.DataContext = viewModel;
                 App.MyGrid.Children.RemoveAt(0);
                 App.MyGrid.Children.Add(view);

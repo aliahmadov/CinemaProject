@@ -39,7 +39,9 @@ namespace Cinema_MVVM_PROJECT_WPF.Services
                             Genre = SingleData.Genre,
                             ImagePath = SingleData.Poster,
                             Name = SingleData.Title,
-                            Rating = SingleData.imdbRating
+                            Rating = SingleData.imdbRating,
+                              VideoID = SingleData.imdbID,
+                           
                         };
                         movies.Add(mymovie);
                     }
@@ -50,7 +52,8 @@ namespace Cinema_MVVM_PROJECT_WPF.Services
                             Genre = SingleData.Genre,
                             ImagePath = "/Images/noImage.jpg",
                             Name = SingleData.Title,
-                            Rating = SingleData.imdbRating
+                            Rating = SingleData.imdbRating,
+                            
                         };
                         movies.Add(mymovie);
                     }

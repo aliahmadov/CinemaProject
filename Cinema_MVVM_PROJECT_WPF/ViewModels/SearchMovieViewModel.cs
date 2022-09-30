@@ -2,6 +2,7 @@
 using Cinema_MVVM_PROJECT_WPF.Models;
 using Cinema_MVVM_PROJECT_WPF.Services;
 using Cinema_MVVM_PROJECT_WPF.Views.UserControls;
+using Microsoft.Web.WebView2.Wpf;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,8 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
 {
     public class SearchMovieViewModel : BaseViewModel
     {
+        public Label Trailer_Label { get; set; }
+        public WebView2 WebView { get; set; }
         public WrapPanel WrapPanel { get; set; }
         public WrapPanel ShowMoviesWrapPanel { get; set; }
         public TextBox TextBox { get; set; }
@@ -65,10 +68,13 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
                         };
                         var uc = new SingleMovieUC();
                         viewModel.ShowMoviesWrapPanel = ShowMoviesWrapPanel;
+                        viewModel.WebView = WebView;
+                        viewModel.Label = Trailer_Label;
                         uc.DataContext = viewModel;
                         uc.Width = 250;
                         uc.Height = 350;
                         uc.Margin = new System.Windows.Thickness(10, 40, 10, 10);
+  
                         RegulateUCBackgroundColor(Convert.ToDouble(Movies[i].Rating),ref uc.rating_label);
 
                         WrapPanel.Children.Add(uc);
