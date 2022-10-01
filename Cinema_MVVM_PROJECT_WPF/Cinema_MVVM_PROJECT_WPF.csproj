@@ -97,6 +97,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CinemaHomeViewModel.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\MovieStock.cs" />
     <Compile Include="Models\Place.cs" />
@@ -112,6 +113,8 @@
     <Compile Include="ViewModels\SingleMovieUCViewModel.cs" />
     <Compile Include="ViewModels\TicketUCViewModel.cs" />
     <Compile Include="ViewModels\TimePickerViewModel.cs" />
+    <Compile Include="ViewModels\UserViewModels\UserBuyViewModel.cs" />
+    <Compile Include="ViewModels\UserViewModels\UserHomeViewModel.cs" />
     <Compile Include="Views\UserControls\AdminHomeUC.xaml.cs">
       <DependentUpon>AdminHomeUC.xaml</DependentUpon>
     </Compile>
@@ -141,6 +144,9 @@
     </Compile>
     <Compile Include="Views\UserControls\TimePickerUC.xaml.cs">
       <DependentUpon>TimePickerUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserUCs\UserBuyUC.xaml.cs">
+      <DependentUpon>UserBuyUC.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\UserUCs\UserHomeUC.xaml.cs">
       <DependentUpon>UserHomeUC.xaml</DependentUpon>
@@ -201,6 +207,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\UserControls\TimePickerUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserUCs\UserBuyUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

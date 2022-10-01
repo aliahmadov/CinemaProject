@@ -25,7 +25,7 @@ namespace Cinema_MVVM_PROJECT_WPF.Services
 
             try
             {
-                for (int i = 0; i < 5; i++)
+                for (int i = 0; i < 1; i++)
                 {
 
                     response = httpClient.GetAsync($@"http://www.omdbapi.com/?apikey=9a8ee6f1&t={Data.Search[i].Title}&plot=full").Result;
@@ -41,6 +41,10 @@ namespace Cinema_MVVM_PROJECT_WPF.Services
                             Name = SingleData.Title,
                             Rating = SingleData.imdbRating,
                               VideoID = SingleData.imdbID,
+                               Actors=SingleData.Actors,
+                                Description=SingleData.Plot,
+                                 Director=SingleData.Director,
+                                  Released=SingleData.Released
                            
                         };
                         movies.Add(mymovie);

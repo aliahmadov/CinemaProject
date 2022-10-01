@@ -1,6 +1,8 @@
 ﻿using Cinema_MVVM_PROJECT_WPF.Commands;
 using Cinema_MVVM_PROJECT_WPF.Models;
+using Cinema_MVVM_PROJECT_WPF.ViewModels.UserViewModels;
 using Cinema_MVVM_PROJECT_WPF.Views.UserControls;
+using Cinema_MVVM_PROJECT_WPF.Views.UserUCs;
 using MaterialDesignThemes.Wpf;
 using Syncfusion.Windows.Controls.Input;
 using System;
@@ -53,6 +55,7 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
             set { ticket = value; }
         }
 
+        public WrapPanel UserHomeWrapPanel { get; set; }
         public ComboBox ComboBox { get; set; }
         public WrapPanel WrapPanel { get; set; }
         public DatePicker DatePicker { get; set; }
@@ -90,6 +93,7 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
 
         public ObservableCollection<Movie> Movies { get; set; }
 
+
         private Movie movie;
 
         public Movie SelectedMovie
@@ -109,7 +113,12 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
                     movie.Name = uC.title_label.Content.ToString();
                     movie.Genre = uC.genre_label.Content.ToString();
                     movie.Rating = uC.rating_label.Content.ToString();
-                    movie.ImagePath = uC.image.Source.ToString();
+                    movie.ImagePath = uC.image.Source.ToString();       
+                    movie.Description=uC.description_label.Content.ToString();
+                    movie.Actors = uC.actors_label.Content.ToString();
+                    movie.Director = uC.director_label.Content.ToString();
+                    movie.Released = uC.released_label.Content.ToString();
+                    movie.VideoID = uC.videoID_label.Content.ToString();
                     Movies.Add(movie);
                 }
             }
@@ -217,6 +226,23 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
 
             DoneCommand = new RelayCommand(d =>
             {
+                var userHomeUC = new UserHomeUC();
+                var userHomeViewModel = new UserHomeViewModel();
+                userHomeViewModel.UserHomeWrapPanel = userHomeUC.moviesPanel;
+                userHomeUC.DataContext=userHomeViewModel;
+
+                var userBuyUC = new UserBuyUC();
+                var userBuyViewModel=new UserBuyViewModel();
+
+                userBuyViewModel.Button = userBuyUC.end_button;
+                userBuyViewModel.WebViewTrailer = userBuyUC.webView;
+                userBuyViewModel.Movie = Ticket.Movie;
+                userBuyUC.DataContext = userBuyViewModel;
+                userBuyUC.Width = 1000;
+                userBuyUC.Height = 450;
+                userBuyUC.Margin = new System.Windows.Thickness(0,40,10,0);
+                MessageBox.Show("Movie Added to User Panel");
+               UserHomeWrapPanel.Children.Add(userBuyUC);
 
             });
 

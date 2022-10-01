@@ -22,6 +22,8 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
         public RelayCommand OrganizeMoviesCommand { get; set; }
 
         public WrapPanel ShowMoviesWrapPanel { get; set; }
+
+        public WrapPanel UserHomeWrapPanel { get; set; }
         public AdminHomeViewModel()
         {
             BackPage = App.MyGrid.Children[0];
@@ -79,6 +81,7 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
                 viewModel.WrapPanel = ShowView.moviesPanel;
                 viewModel.ComboBox = view.movieComboBox;
                 viewModel.TicketViewModel = ticketViewModel;
+                viewModel.UserHomeWrapPanel = UserHomeWrapPanel;
 
                 view.ticket_panel.Children.Add(ticketView);
 

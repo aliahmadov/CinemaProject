@@ -33,8 +33,8 @@ namespace Cinema_MVVM_PROJECT_WPF
             var homeUCviewModel = new CinemaHomeUCViewModel();
             homeUC.DataContext = homeUCviewModel;
 
-
             App.MyGrid.Children.Add(homeUC);
+            App.BackPage = App.MyGrid.Children[0];
 
             this.DataContext = viewModel;
         }

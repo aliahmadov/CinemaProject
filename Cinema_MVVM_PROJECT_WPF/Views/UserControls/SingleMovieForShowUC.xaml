@@ -57,6 +57,11 @@
                        Content="{Binding Movie.Name, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></Label>
                     <Label Content="{Binding Movie.Genre, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Name="genre_label" Foreground="Gray"></Label>
                 </StackPanel>
+                <Label Name="description_label" Content="{ Binding Movie.Description}" Visibility="Hidden"></Label>
+                <Label Name="released_label" Content="{ Binding Movie.Released}" Visibility="Hidden"></Label>
+                <Label Name="actors_label" Content="{ Binding Movie.Actors}" Visibility="Hidden"></Label>
+                <Label Name="director_label" Content="{ Binding Movie.Director}" Visibility="Hidden"></Label>
+                <Label Name="videoID_label" Content="{ Binding Movie.VideoID}" Visibility="Hidden"></Label>
             </Grid>
         </Border>
     </Grid>

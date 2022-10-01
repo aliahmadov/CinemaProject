@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cinema_MVVM_PROJECT_WPF.Views.UserControls;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -19,7 +20,10 @@ namespace Cinema_MVVM_PROJECT_WPF
         public static Image Image;
         public App()
         {
-
+            //var view = new CinemaHomeUC();
+            //var viewModel = new CinemaHomeViewModel();
+            //view.DataContext = viewModel;
+            //MyGrid.Children.Add(view);
         }
 
     }

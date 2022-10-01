@@ -70,3 +70,5 @@ C:\Users\eliah\source\repos\Cinema_MVVM_PROJECT_WPF\Cinema_MVVM_PROJECT_WPF\bin\
 C:\Users\eliah\source\repos\Cinema_MVVM_PROJECT_WPF\Cinema_MVVM_PROJECT_WPF\obj\Debug\Views\UserUCs\UserHomeUC.g.cs
 C:\Users\eliah\source\repos\Cinema_MVVM_PROJECT_WPF\Cinema_MVVM_PROJECT_WPF\obj\Debug\Cinema_MVVM_PROJECT_WPF_Content.g.cs
 C:\Users\eliah\source\repos\Cinema_MVVM_PROJECT_WPF\Cinema_MVVM_PROJECT_WPF\obj\Debug\Views\UserUCs\UserHomeUC.baml
+C:\Users\eliah\source\repos\Cinema_MVVM_PROJECT_WPF\Cinema_MVVM_PROJECT_WPF\obj\Debug\Views\UserUCs\UserBuyUC.g.cs
+C:\Users\eliah\source\repos\Cinema_MVVM_PROJECT_WPF\Cinema_MVVM_PROJECT_WPF\obj\Debug\Views\UserUCs\UserBuyUC.baml

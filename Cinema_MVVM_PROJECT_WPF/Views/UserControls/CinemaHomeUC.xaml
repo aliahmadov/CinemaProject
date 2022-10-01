@@ -10,7 +10,7 @@
         <StackPanel  Width="480" Background="{StaticResource mainColor}" Orientation="Horizontal"
                      HorizontalAlignment="Center">
             <Button Command="{Binding AdminCommand}" FontFamily="Calibri" Foreground="{StaticResource secondColor}" Background="{StaticResource thirdColor}" FontWeight="ExtraBold" Margin="30" Height="75" Width="180"  Style="{StaticResource NewGameButtonStyle}" FontSize="50">Admin</Button>
-            <Button FontFamily="Calibri"  Foreground="{StaticResource secondColor}" Background="{StaticResource thirdColor}" FontWeight="ExtraBold" Margin="30" Height="75" Width="180" Style="{StaticResource NewGameButtonStyle}" FontSize="50">User</Button>
+            <Button Command="{Binding UserCommand}" FontFamily="Calibri"  Foreground="{StaticResource secondColor}" Background="{StaticResource thirdColor}" FontWeight="ExtraBold" Margin="30" Height="75" Width="180" Style="{StaticResource NewGameButtonStyle}" FontSize="50">User</Button>
         </StackPanel>
     </Grid>
 </UserControl>
