@@ -237,6 +237,24 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
                 userBuyViewModel.Button = userBuyUC.end_button;
                 userBuyViewModel.WebViewTrailer = userBuyUC.webView;
                 userBuyViewModel.Movie = Ticket.Movie;
+                userBuyViewModel.Ticket = Ticket;
+                userBuyViewModel.SeatStackPanel = userBuyUC.seat_Stack_Panel;
+                userBuyViewModel.BuyStackPanel = userBuyUC.buy_Stack_Panel;
+
+                foreach (var item in userBuyUC.seat_Stack_Panel.Children)
+                {
+                    if(item is StackPanel sP)
+                    {
+                        foreach (var seat in sP.Children)
+                        {
+                            if(seat is Button button)
+                            {
+                                userBuyViewModel.Buttons.Add(button);
+                            }
+                        }
+                    }
+                }
+
                 userBuyUC.DataContext = userBuyViewModel;
                 userBuyUC.Width = 1000;
                 userBuyUC.Height = 450;

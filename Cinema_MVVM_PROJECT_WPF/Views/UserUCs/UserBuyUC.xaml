@@ -6,6 +6,7 @@
              xmlns:local="clr-namespace:Cinema_MVVM_PROJECT_WPF.Views.UserUCs" xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
              mc:Ignorable="d" 
              Width="1000" Height="450">
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="6*"></RowDefinition>
@@ -23,7 +24,7 @@
 
             <StackPanel HorizontalAlignment="Center" Width="450" Margin="0,0,400,0">
                 <Image Height="385" Source="{Binding Movie.ImagePath}">
-                    
+
                 </Image>
             </StackPanel>
             <StackPanel HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="500">
@@ -50,15 +51,16 @@
                           Height="385" Visibility="Hidden"
                               Source="https://www.microsoft.com"
    />
-                
-                
+
+
             </StackPanel>
             <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top">
-               
+
             </StackPanel>
-            <Border  HorizontalAlignment="Right" Width="400" 
-                     BorderThickness="0,2,2,2" BorderBrush="{StaticResource secondColor}">
-                <StackPanel Background="{StaticResource mainColor}">
+            <Border HorizontalAlignment="Right" Width="400"
+                    BorderThickness="0,2,2,2" BorderBrush="{StaticResource secondColor}">
+
+                <StackPanel Name="buy_Stack_Panel"  Background="{StaticResource mainColor}">
                     <Label FontSize="35" Foreground="{StaticResource thirdColor}"
                        Content="{Binding Movie.Name}"></Label>
                     <Label Margin="5,0,0,0" Foreground="{StaticResource secondColor}" FontSize="14"
@@ -84,38 +86,344 @@
 
                 </StackPanel>
             </Border>
+
+
+
+            <StackPanel Visibility="Hidden"  Background="#0F0F1B" HorizontalAlignment="Right" Width="400"
+                        VerticalAlignment="Center" Name="seat_Stack_Panel"
+                        >
+                <Image HorizontalAlignment="Left" Width="50" Height="30" Source="/Images/leftarrow.png">
+                    <Image.InputBindings>
+                        <MouseBinding Gesture="LeftClick" Command="{Binding BackCommand}" />
+                    </Image.InputBindings>
+                </Image>
+                <Label Foreground="{StaticResource secondColor}"
+                      FontWeight="Bold" FontSize="26" Margin="20" >Movie Ticket Selection</Label>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button Name="button1" Margin="5" Width="20" Height="20" 
+                            Command="{Binding ClickCommand}"
+                            CommandParameter="{Binding ElementName=button1}"       
+                           >
+                        <Button.Resources>
+                            <Style TargetType="Border" x:Name="new_Style">
+                                <Setter Property="CornerRadius" Value="5"></Setter>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Margin="5" Width="20" Height="20" Command="{Binding ClickCommand}"
+                         Name="button2"  CommandParameter="{Binding ElementName=button2}"  >
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"></Setter>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button Margin="5" Width="20" Height="20" 
+                            Command="{Binding ClickCommand}"
+                             Name="button3"  CommandParameter="{Binding ElementName=button3}">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"></Setter>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Margin="5" Width="20" Height="20" 
+                            Command="{Binding ClickCommand}"
+                             Name="button4"  CommandParameter="{Binding ElementName=button4}">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"></Setter>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Margin="5" Width="20" Height="20" 
+                            Command="{Binding ClickCommand}"
+                             Name="button5"  CommandParameter="{Binding ElementName=button5}">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"></Setter>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Margin="5" Width="20" Height="20" 
+                            Command="{Binding ClickCommand}"
+                             Name="button6"  CommandParameter="{Binding ElementName=button6}">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"></Setter>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                    <Button Margin="5" Width="20" Height="20"
+                            Command="{Binding ClickCommand}"
+                             Name="button7"  CommandParameter="{Binding ElementName=button7}">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"></Setter>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Margin="5" Width="20" Height="20" 
+                            Command="{Binding ClickCommand}"
+                             Name="button8"  CommandParameter="{Binding ElementName=button8}">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"></Setter>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Margin="5" Width="20" Height="20"
+                            Command="{Binding ClickCommand}"
+                             Name="button9"  CommandParameter="{Binding ElementName=button9}">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"></Setter>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Margin="5" Width="20" Height="20"
+                            Command="{Binding ClickCommand}"
+                             Name="button10"  CommandParameter="{Binding ElementName=button10}">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"></Setter>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Margin="5" Width="20" Height="20"
+                            Command="{Binding ClickCommand}"
+                             Name="button11"  CommandParameter="{Binding ElementName=button11}">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"></Setter>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                    <Button Margin="5" Width="20" Height="20" 
+                            Command="{Binding ClickCommand}"
+                             Name="button12"  CommandParameter="{Binding ElementName=button12}">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"></Setter>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Margin="5" Width="20" Height="20" Command="{Binding ClickCommand}"
+                             Name="button13"  CommandParameter="{Binding ElementName=button13}">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"></Setter>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Margin="5" Width="20" Height="20" Command="{Binding ClickCommand}" 
+                             Name="button14"  CommandParameter="{Binding ElementName=button14}">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"></Setter>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Margin="5" Width="20" Height="20" Command="{Binding ClickCommand}"
+                             Name="button15"  CommandParameter="{Binding ElementName=button15}">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"></Setter>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Margin="5" Width="20" Height="20" Command="{Binding ClickCommand}"
+                             Name="button16"  CommandParameter="{Binding ElementName=button16}">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"></Setter>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Margin="5" Width="20" Height="20" Command="{Binding ClickCommand}" 
+                             Name="button17"  CommandParameter="{Binding ElementName=button17}">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"></Setter>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                    <Button Margin="5" Width="20" Height="20" Command="{Binding ClickCommand}"
+                             Name="button18"  CommandParameter="{Binding ElementName=button18}">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"></Setter>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Margin="5" Width="20" Height="20" Command="{Binding ClickCommand}"
+                             Name="button19"  CommandParameter="{Binding ElementName=button19}">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"></Setter>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Margin="5" Width="20" Height="20" Command="{Binding ClickCommand}"
+                             Name="button20"  CommandParameter="{Binding ElementName=button20}">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"></Setter>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Margin="5" Width="20" Height="20" Command="{Binding ClickCommand}" 
+                             Name="button21"  CommandParameter="{Binding ElementName=button21}">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"></Setter>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Margin="5" Width="20" Height="20" Command="{Binding ClickCommand}"
+                             Name="button22"  CommandParameter="{Binding ElementName=button22}">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"></Setter>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Margin="5" Width="20" Height="20" Command="{Binding ClickCommand}"
+                             Name="button23"  CommandParameter="{Binding ElementName=button23}">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"></Setter>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Margin="5" Width="20" Height="20" Command="{Binding ClickCommand}"
+                             Name="button24"  CommandParameter="{Binding ElementName=button24}">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"></Setter>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button Margin="5" Width="20" Height="20" Command="{Binding ClickCommand}"
+                             Name="button25"  CommandParameter="{Binding ElementName=button25}">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"></Setter>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Margin="5" Width="20" Height="20" Command="{Binding ClickCommand}" 
+                             Name="button26"  CommandParameter="{Binding ElementName=button26}">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"></Setter>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Margin="5" Width="20" Height="20" Command="{Binding ClickCommand}"
+                             Name="button27"  CommandParameter="{Binding ElementName=button27}">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"></Setter>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Margin="5" Width="20" Height="20" Command="{Binding ClickCommand}" 
+                             Name="button28"  CommandParameter="{Binding ElementName=button28}">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"></Setter>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Margin="5" Width="20" Height="20" Command="{Binding ClickCommand}"
+                             Name="button29"  CommandParameter="{Binding ElementName=button29}">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"></Setter>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Margin="5" Width="20" Height="20" Command="{Binding ClickCommand}"
+                             Name="button30"  CommandParameter="{Binding ElementName=button30}">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"></Setter>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                </StackPanel>
+
+                <StackPanel Margin="15" HorizontalAlignment="Center" Orientation="Horizontal">
+                    <Label Width="15" Height="15" Foreground="White" Background="Orange">
+                        <Label.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5">
+
+                                </Setter>
+                            </Style>
+                        </Label.Resources>
+                    </Label>
+                    <Label Foreground="White">Reserved</Label>
+
+                    <Label Margin="10,0,0,0" Width="15" Height="15" Foreground="White" Background="Red">
+                        <Label.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5">
+
+                                </Setter>
+                            </Style>
+                        </Label.Resources>
+                    </Label>
+                    <Label Margin="3,0,0,0" Foreground="White">Selected</Label>
+
+                    <Label Margin="10,0,0,0" Width="15" Height="15" Foreground="White" Background="#1F1F2B">
+                        <Label.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5">
+
+                                </Setter>
+                            </Style>
+                        </Label.Resources>
+                    </Label>
+                    <Label Margin="3,0,0,0" Foreground="White">Available</Label>
+                </StackPanel>
+            </StackPanel>
         </Grid>
 
         <Border Grid.Row="1" BorderThickness="1,3,1,1" BorderBrush="{StaticResource thirdColor}">
             <StackPanel Background="Orange"  >
                 <Button Width="300"  Background="{StaticResource secondColor}" FontWeight="Bold" FontSize="25" Margin="0,10,10,0" Foreground="{StaticResource thirdColor}"
-              HorizontalAlignment="Right" >Buy Movie Ticket</Button>
+              HorizontalAlignment="Right" 
+                        Command="{Binding BuyCommand}">Buy Movie Ticket</Button>
+
             </StackPanel>
 
-            
         </Border>
         <StackPanel Margin="12" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Left">
             <Button  Name="end_button"    Background="{StaticResource mainColor}" FontWeight="Bold" FontSize="25" Margin="0,10,10,0" Foreground="DarkGray"
               HorizontalAlignment="Right" Command="{Binding EndCommand}" Visibility="Hidden" >
                 End Trailer Video
-                <!--<Button.Triggers>
-                    <EventTrigger  RoutedEvent="Button.Click">
-                        <EventTrigger.Actions>
-                            <BeginStoryboard >
-                                <Storyboard   AutoReverse="False">
-                                    <DoubleAnimation  Storyboard.TargetName="end_button"
-                                      Storyboard.TargetProperty ="Button.Height"
-                                      To="0"  Duration="0:0:2"/>
-                                    <DoubleAnimation  Storyboard.TargetName="end_button"
-                                      Storyboard.TargetProperty = "Button.Opacity"
-                                      To="0"  Duration="0:0:2"/>
-                                </Storyboard>
-                            </BeginStoryboard>
-
-                        </EventTrigger.Actions>
-                    </EventTrigger>
-                </Button.Triggers>-->
             </Button>
+        </StackPanel>
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center" Orientation="Horizontal"
+                    Margin="0,0,100,0">
+            <Label FontSize="20" VerticalContentAlignment="Center"
+                   Foreground="{StaticResource thirdColor}" FontWeight="Bold"
+                   Margin="10,0,0,0" Content="{Binding Ticket.Time}"></Label>
+            <Label FontSize="20" VerticalContentAlignment="Center"
+                   Foreground="{StaticResource thirdColor}"
+                   FontWeight="Bold" Content="{Binding Ticket.DateTime}"></Label>
         </StackPanel>
     </Grid>
 </UserControl>
