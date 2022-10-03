@@ -25,7 +25,7 @@ namespace Cinema_MVVM_PROJECT_WPF.Services
 
             try
             {
-                for (int i = 0; i < 1; i++)
+                for (int i = 0; i < 10; i++)
                 {
 
                     response = httpClient.GetAsync($@"http://www.omdbapi.com/?apikey=9a8ee6f1&t={Data.Search[i].Title}&plot=full").Result;

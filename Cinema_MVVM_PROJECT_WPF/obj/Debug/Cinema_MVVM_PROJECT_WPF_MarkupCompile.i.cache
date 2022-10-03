@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\eliah\source\repos\Cinema_MVVM_PROJECT_WPF\Cinema_MVVM_PROJECT_WPF\App.xaml
-14-1849823229
+15246597731
 3-1663462981
-39-864918041
+431512339142
 272022668318
-Dictionary.xaml;Views\MainWindow.xaml;Views\UserControls\AdminHomeUC.xaml;Views\UserControls\AdminSignUpUC.xaml;Views\UserControls\CinemaHomeUC.xaml;Views\UserControls\OrganizeMovieUC.xaml;Views\UserControls\SearchMovieUC.xaml;Views\UserControls\ShowMoviesUC.xaml;Views\UserControls\SingleMovieForShowUC.xaml;Views\UserControls\SingleMovieUC.xaml;Views\UserControls\TicketUC.xaml;Views\UserControls\TimePickerUC.xaml;Views\UserUCs\UserBuyUC.xaml;Views\UserUCs\UserHomeUC.xaml;
+Dictionary.xaml;Views\MainWindow.xaml;Views\UserControls\AdminHomeUC.xaml;Views\UserControls\AdminSignUpUC.xaml;Views\UserControls\CinemaHomeUC.xaml;Views\UserControls\OrganizeMovieUC.xaml;Views\UserControls\PurchaseHistoryUC.xaml;Views\UserControls\SearchMovieUC.xaml;Views\UserControls\ShowMoviesUC.xaml;Views\UserControls\SingleMovieForShowUC.xaml;Views\UserControls\SingleMovieUC.xaml;Views\UserControls\TicketUC.xaml;Views\UserControls\TimePickerUC.xaml;Views\UserUCs\UserBuyUC.xaml;Views\UserUCs\UserHomeUC.xaml;
 
 True
 

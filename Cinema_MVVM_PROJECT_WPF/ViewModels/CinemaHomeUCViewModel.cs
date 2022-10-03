@@ -13,10 +13,13 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
 {
     public class CinemaHomeUCViewModel : BaseViewModel
     {
-
+        public WrapPanel TicketsPanel { get; set; }
         public WrapPanel UserHomeWrapPanel { get; set; }
         public RelayCommand AdminCommand { get; set; }
 
+        public PurchaseHistoryViewModel PurchaseViewModel { get; set; }
+
+        public PurchaseHistoryUC PurchaseUC { get; set; }
         public RelayCommand UserCommand { get; set; }
 
         public CinemaHomeUCViewModel()
@@ -29,8 +32,10 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
                 var uc = new AdminSignUpUC();
                 var viewModel = new AdminSignViewModel();
                 viewModel.UserHomeWrapPanel = userHomeUC.moviesPanel;
+                viewModel.PurchaseView = PurchaseUC;
+                viewModel.PurchaseViewModel = PurchaseViewModel;
                 uc.DataContext = viewModel;
-
+                viewModel.TicketsPanel = TicketsPanel;
                 App.MyGrid.Children.RemoveAt(0);
                 App.MyGrid.Children.Add(uc);
             });

@@ -1,4 +1,5 @@
 ﻿using Cinema_MVVM_PROJECT_WPF.Commands;
+using Cinema_MVVM_PROJECT_WPF.FileHelpers;
 using Cinema_MVVM_PROJECT_WPF.Models;
 using Cinema_MVVM_PROJECT_WPF.ViewModels.UserViewModels;
 using Cinema_MVVM_PROJECT_WPF.Views.UserControls;
@@ -18,7 +19,8 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
 {
     public class OrganizeMovieViewModel : BaseViewModel
     {
-
+        public WrapPanel TicketsPanel { get; set; }
+        public ObservableCollection<string> MovieTimeList { get; set; }
 
         private double totalVolume;
 
@@ -60,6 +62,8 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
         public WrapPanel WrapPanel { get; set; }
         public DatePicker DatePicker { get; set; }
         public SfTimePicker TimePicker { get; set; }
+        public SfTimePicker TimePicker2 { get; set; }
+        public SfTimePicker TimePicker3 { get; set; }
         public RelayCommand SelectedCommand { get; set; }
         public RelayCommand PlusCommand { get; set; }
 
@@ -113,8 +117,8 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
                     movie.Name = uC.title_label.Content.ToString();
                     movie.Genre = uC.genre_label.Content.ToString();
                     movie.Rating = uC.rating_label.Content.ToString();
-                    movie.ImagePath = uC.image.Source.ToString();       
-                    movie.Description=uC.description_label.Content.ToString();
+                    movie.ImagePath = uC.image.Source.ToString();
+                    movie.Description = uC.description_label.Content.ToString();
                     movie.Actors = uC.actors_label.Content.ToString();
                     movie.Director = uC.director_label.Content.ToString();
                     movie.Released = uC.released_label.Content.ToString();
@@ -187,7 +191,14 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
 
                 bool isParsed = Double.TryParse(PriceTxtBox.Text, out double price);
                 DateTime dt = DateTime.Parse(TimePicker.Value.ToString());
+                DateTime dt2 = DateTime.Parse(TimePicker2.Value.ToString());
+                DateTime dt3 = DateTime.Parse(TimePicker3.Value.ToString());
                 var time = dt.ToString("h:mm tt");
+                var time2 = dt2.ToString("h:mm tt");
+                var time3 = dt3.ToString("h:mm tt");
+                MovieTimeList = new ObservableCollection<string>();
+                MovieTimeList.Add(time); MovieTimeList.Add(time2); MovieTimeList.Add(time3);
+
                 if (TimePicker.Value.ToString() != "05:44 PM" && DatePicker.SelectedDate != null
                 && Count != 0 && SelectedMovie != null)
                 {
@@ -200,7 +211,7 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
                             Guid = Guid.NewGuid(),
                             Movie = SelectedMovie,
                             DateTime = DatePicker.SelectedDate,
-                            Time = time,
+                            TimeList = MovieTimeList,
                             Place = place,
                             Price = price
                         };
@@ -229,38 +240,47 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
                 var userHomeUC = new UserHomeUC();
                 var userHomeViewModel = new UserHomeViewModel();
                 userHomeViewModel.UserHomeWrapPanel = userHomeUC.moviesPanel;
-                userHomeUC.DataContext=userHomeViewModel;
+                userHomeUC.DataContext = userHomeViewModel;
 
                 var userBuyUC = new UserBuyUC();
-                var userBuyViewModel=new UserBuyViewModel();
+                var userBuyViewModel = new UserBuyViewModel();
 
                 userBuyViewModel.Button = userBuyUC.end_button;
                 userBuyViewModel.WebViewTrailer = userBuyUC.webView;
                 userBuyViewModel.Movie = Ticket.Movie;
                 userBuyViewModel.Ticket = Ticket;
                 userBuyViewModel.SeatStackPanel = userBuyUC.seat_Stack_Panel;
+                userBuyViewModel.TimeList = MovieTimeList;
                 userBuyViewModel.BuyStackPanel = userBuyUC.buy_Stack_Panel;
-
+                userBuyViewModel.TicketsPanel = TicketsPanel;
+                userBuyViewModel.Price_Label = userBuyUC.price_Label;
                 foreach (var item in userBuyUC.seat_Stack_Panel.Children)
                 {
-                    if(item is StackPanel sP)
+                    if (item is StackPanel sP)
                     {
                         foreach (var seat in sP.Children)
                         {
-                            if(seat is Button button)
+                            if (seat is Button button)
                             {
-                                userBuyViewModel.Buttons.Add(button);
+                                if (button.Width == 20)
+                                {
+                                    userBuyViewModel.Buttons.Add(button);
+                                    Global.Button_session_1.Add(button);
+                                    Global.Button_session_2.Add(button);
+                                    Global.Button_session_3.Add(button);
+                                }
                             }
                         }
                     }
                 }
+               
 
                 userBuyUC.DataContext = userBuyViewModel;
                 userBuyUC.Width = 1000;
                 userBuyUC.Height = 450;
-                userBuyUC.Margin = new System.Windows.Thickness(0,40,10,0);
+                userBuyUC.Margin = new System.Windows.Thickness(0, 40, 10, 0);
                 MessageBox.Show("Movie Added to User Panel");
-               UserHomeWrapPanel.Children.Add(userBuyUC);
+                UserHomeWrapPanel.Children.Add(userBuyUC);
 
             });
 

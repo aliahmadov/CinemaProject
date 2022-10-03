@@ -12,6 +12,10 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
 {
     public class AdminSignViewModel : BaseViewModel
     {
+
+        public PurchaseHistoryUC PurchaseView { get; set; }
+        public PurchaseHistoryViewModel PurchaseViewModel { get; set; }
+        public WrapPanel TicketsPanel { get; set; }
         public WrapPanel UserHomeWrapPanel { get; set; }
         public RelayCommand BackCommand { get; set; }
         //============================================     
@@ -31,7 +35,6 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
             set { password = value; OnPropertyChanged(); }
         }
         //============================================
-
         public RelayCommand SignInCommand { get; set; }
         public AdminSignViewModel()
         {
@@ -49,6 +52,9 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
                     var view = new AdminHomeUC();
                     var viewModel = new AdminHomeViewModel();
                     viewModel.UserHomeWrapPanel = UserHomeWrapPanel;
+                    viewModel.TicketsPanel=TicketsPanel;
+                    viewModel.PurchaseViewModel = PurchaseViewModel;
+                    viewModel.PurchaseUC = PurchaseView;
                     view.DataContext = viewModel;
                     App.MyGrid.Children.RemoveAt(0);
                     App.MyGrid.Children.Add(view);

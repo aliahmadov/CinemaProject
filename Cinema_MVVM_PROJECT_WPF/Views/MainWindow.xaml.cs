@@ -28,11 +28,16 @@ namespace Cinema_MVVM_PROJECT_WPF
 
             var viewModel = new MainViewModel();
             App.MyGrid = myGrid;
-
             var homeUC = new CinemaHomeUC();
             var homeUCviewModel = new CinemaHomeUCViewModel();
             homeUC.DataContext = homeUCviewModel;
 
+            var purchaseView = new PurchaseHistoryUC();
+            var purchaseViewModel = new PurchaseHistoryViewModel();
+            purchaseView.DataContext = purchaseViewModel;
+            homeUCviewModel.TicketsPanel = purchaseView.ticketsPanel;
+            homeUCviewModel.PurchaseUC = purchaseView;
+            homeUCviewModel.PurchaseViewModel = purchaseViewModel;
             App.MyGrid.Children.Add(homeUC);
             App.BackPage = App.MyGrid.Children[0];
 

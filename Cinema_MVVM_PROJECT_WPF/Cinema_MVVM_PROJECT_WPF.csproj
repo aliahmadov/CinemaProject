@@ -98,6 +98,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="CinemaHomeViewModel.cs" />
+    <Compile Include="FileHelpers\FileHelper.cs" />
+    <Compile Include="FileHelpers\Global.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\MovieStock.cs" />
     <Compile Include="Models\Place.cs" />
@@ -107,6 +109,7 @@
     <Compile Include="ViewModels\AdminSignViewModel.cs" />
     <Compile Include="ViewModels\CinemaHomeUCViewModel.cs" />
     <Compile Include="ViewModels\OrganizeMovieViewModel.cs" />
+    <Compile Include="ViewModels\PurchaseHistoryViewModel.cs" />
     <Compile Include="ViewModels\SearchMovieViewModel.cs" />
     <Compile Include="ViewModels\ShowMoviesViewModel.cs" />
     <Compile Include="ViewModels\SingleMovieForShowViewModel.cs" />
@@ -126,6 +129,9 @@
     </Compile>
     <Compile Include="Views\UserControls\OrganizeMovieUC.xaml.cs">
       <DependentUpon>OrganizeMovieUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\PurchaseHistoryUC.xaml.cs">
+      <DependentUpon>PurchaseHistoryUC.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\UserControls\SearchMovieUC.xaml.cs">
       <DependentUpon>SearchMovieUC.xaml</DependentUpon>
@@ -183,6 +189,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\UserControls\OrganizeMovieUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControls\PurchaseHistoryUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

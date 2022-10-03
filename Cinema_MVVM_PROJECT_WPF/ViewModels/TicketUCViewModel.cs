@@ -38,8 +38,7 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
 
         public TicketUCViewModel()
         {
-            Place = new Place();
-            Ticket = new TicketItem();
+           
         }
 
     }

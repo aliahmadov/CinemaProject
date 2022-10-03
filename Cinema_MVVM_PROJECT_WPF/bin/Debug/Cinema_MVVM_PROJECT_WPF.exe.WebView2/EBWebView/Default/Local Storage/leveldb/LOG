@@ -1,3 +1,6 @@
-2022/10/02-13:45:03.231 4af4 Reusing MANIFEST C:\Users\eliah\source\repos\Cinema_MVVM_PROJECT_WPF\Cinema_MVVM_PROJECT_WPF\bin\Debug\Cinema_MVVM_PROJECT_WPF.exe.WebView2\EBWebView\Default\Local Storage\leveldb/MANIFEST-000001
-2022/10/02-13:45:03.232 4af4 Recovering log #14
-2022/10/02-13:45:03.233 4af4 Reusing old log C:\Users\eliah\source\repos\Cinema_MVVM_PROJECT_WPF\Cinema_MVVM_PROJECT_WPF\bin\Debug\Cinema_MVVM_PROJECT_WPF.exe.WebView2\EBWebView\Default\Local Storage\leveldb/000014.log 
+2022/10/03-14:07:15.972 3304 Reusing MANIFEST C:\Users\eliah\source\repos\Cinema_MVVM_PROJECT_WPF\Cinema_MVVM_PROJECT_WPF\bin\Debug\Cinema_MVVM_PROJECT_WPF.exe.WebView2\EBWebView\Default\Local Storage\leveldb/MANIFEST-000001
+2022/10/03-14:07:15.974 3304 Recovering log #18
+2022/10/03-14:07:15.975 3304 Reusing old log C:\Users\eliah\source\repos\Cinema_MVVM_PROJECT_WPF\Cinema_MVVM_PROJECT_WPF\bin\Debug\Cinema_MVVM_PROJECT_WPF.exe.WebView2\EBWebView\Default\Local Storage\leveldb/000018.log 
+2022/10/03-14:12:30.313 5190 Level-0 table #21: started
+2022/10/03-14:12:30.315 5190 Level-0 table #21: 17736 bytes OK
+2022/10/03-14:12:30.316 5190 Delete type=0 #18

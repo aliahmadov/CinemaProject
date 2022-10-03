@@ -72,8 +72,9 @@
                         <StackPanel Name="timePicker_StackPanel" Height="30"  Margin="0,7,0,0" Background="{StaticResource secondColor}">
 
                         </StackPanel>
-                        <local:TimePickerUC x:Name="timePicker"></local:TimePickerUC>
-                        <DatePicker Name="datePicker"  Margin="10,7,0,0" Width="150"
+                        
+
+                        <DatePicker Name="datePicker"  Margin="10,7,0,0" Width="275"
                                     SelectedDateFormat="Short">
                         </DatePicker>
                         <RepeatButton Margin="10,0,0,0" Width="35" Content="-" FontWeight="Bold"
@@ -108,7 +109,12 @@
 
                     </StackPanel>
                 </Border>
-                <Border Margin="6,50,10,0" BorderBrush="{StaticResource secondColor}"
+                <StackPanel Orientation="Horizontal">
+                    <local:TimePickerUC x:Name="timePicker" Margin="20,10,10,10"></local:TimePickerUC>
+                    <local:TimePickerUC x:Name="timePicker1" Margin="20,10,10,10"></local:TimePickerUC>
+                    <local:TimePickerUC x:Name="timePicker2" Margin="20,10,10,10"></local:TimePickerUC>
+                </StackPanel>
+                <Border Margin="6,5,10,0" BorderBrush="{StaticResource secondColor}"
                         BorderThickness="1">
                     <StackPanel Margin="10"  Orientation="Horizontal">
                         <Label FontSize="30" Foreground="{StaticResource thirdColor}">Price</Label>
@@ -128,9 +134,9 @@
                 </Border>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                     <Image Margin="5" Source="{Binding ImagePath}" Width="30" Height="30">
-                        
+
                     </Image>
-                   <Button Margin="0,10,11,10" HorizontalAlignment="Right"  Background="{StaticResource secondColor}" FontWeight="Bold" FontSize="20" Foreground="{StaticResource thirdColor}"
+                    <Button Margin="0,10,11,10" HorizontalAlignment="Right"  Background="{StaticResource secondColor}" FontWeight="Bold" FontSize="20" Foreground="{StaticResource thirdColor}"
                 Command="{Binding ConfirmCommand}">Confirm</Button>
                 </StackPanel>
                 <Button Width="300"  Background="{StaticResource secondColor}" FontWeight="Bold" FontSize="30" Margin="0,5,0,20" Foreground="{StaticResource thirdColor}"

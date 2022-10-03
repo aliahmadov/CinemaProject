@@ -12,7 +12,10 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
 {
     public class AdminHomeViewModel : BaseViewModel
     {
+        public PurchaseHistoryUC PurchaseUC { get; set; }
 
+        public PurchaseHistoryViewModel PurchaseViewModel { get; set; }
+        public WrapPanel TicketsPanel { get; set; }
         public RelayCommand BackCommand { get; set; }
 
         public RelayCommand SearchMoviesCommand { get; set; }
@@ -24,6 +27,10 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
         public WrapPanel ShowMoviesWrapPanel { get; set; }
 
         public WrapPanel UserHomeWrapPanel { get; set; }
+
+        public RelayCommand PurchaseHistoryCommand { get; set; }
+
+        public bool IsFirst { get; set; } = true;
         public AdminHomeViewModel()
         {
             BackPage = App.MyGrid.Children[0];
@@ -64,8 +71,6 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
 
             OrganizeMoviesCommand = new RelayCommand(c =>
             {
-
-
                 var viewModel = new OrganizeMovieViewModel();
                 var view = new OrganizeMovieUC();
 
@@ -76,11 +81,15 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
                 view.DataContext = viewModel;
 
                 viewModel.TimePicker = view.timePicker.sfTimePicker;
+                viewModel.TimePicker2 = view.timePicker1.sfTimePicker;
+                viewModel.TimePicker3 = view.timePicker2.sfTimePicker;
+                viewModel.TicketsPanel = TicketsPanel;
                 viewModel.DatePicker = view.datePicker;
                 viewModel.PriceTxtBox = view.priceTxtbox;
                 viewModel.WrapPanel = ShowView.moviesPanel;
                 viewModel.ComboBox = view.movieComboBox;
                 viewModel.TicketViewModel = ticketViewModel;
+
                 viewModel.UserHomeWrapPanel = UserHomeWrapPanel;
 
                 view.ticket_panel.Children.Add(ticketView);
@@ -88,6 +97,18 @@ namespace Cinema_MVVM_PROJECT_WPF.ViewModels
                 App.MyGrid.Children.RemoveAt(0);
                 App.MyGrid.Children.Add(view);
             });
+
+
+
+           
+            PurchaseHistoryCommand = new RelayCommand(d =>
+            {
+           
+                App.MyGrid.Children.RemoveAt(0);
+                App.MyGrid.Children.Add(PurchaseUC);
+
+            });
+
         }
 
 
